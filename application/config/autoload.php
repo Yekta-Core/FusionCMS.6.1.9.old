@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('cache', 'database', 'session', 'smartyengine', 'template', 'language', 'realms', 'acl', 'user', 'logger', 'plugins');
+$autoload['libraries'] = array('cache', 'database', 'session', 'smartyengine', 'template', 'language', 'realms', 'acl', 'user', 'logger', 'plugins', 'recaptcha');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url', 'smiley', 'emulator', 'form', 'text', 'lang',
 |
 */
 
-$autoload['config'] = array('default_language', 'version', 'acl_defaults', 'fusion', 'message');
+$autoload['config'] = array('default_language', 'version', 'acl_defaults', 'fusion', 'message', 'recaptcha');
 
 
 /*

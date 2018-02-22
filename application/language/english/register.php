@@ -35,3 +35,4 @@ $lang['password'] = "Password";
 $lang['confirm'] = "Confirm password";
 $lang['expansion'] = "Expansion";
 $lang['submit'] = "Create account!";
+$lang['captcha'] = "Captcha";

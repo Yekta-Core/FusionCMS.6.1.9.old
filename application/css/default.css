@@ -741,3 +741,15 @@ input[type="radio"] {
 .color-c8 { color: #69CCF0; } /* mage */
 .color-c9 { color: #9482C9; } /* warlock */
 .color-c11 { color: #FF7D0A; } /* druid */
+
+
+/* Captcha*/
+.captcha{
+    margin: 5px;
+}
+.alert-captcha{
+    border: 2px solid #f00;
+    width: 303px;
+    height: 76px;
+    border-radius: 3px;
+}

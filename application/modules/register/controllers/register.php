@@ -14,14 +14,14 @@ class Register extends MX_Controller
 
 		requirePermission("view");
 
-		$this->load->helper(array('form', 'url'));
+		$this->load->helper(array('form', 'url', 'security'));
 		$this->load->library('form_validation');
+		$this->load->library('recaptcha');
 
 		$this->load->helper('email_helper');
 
 		$this->load->config('bridge');
 		$this->load->config('activation');
-		$this->load->config('captcha');
 
 		$this->load->model('activation_model');
 	}
@@ -46,24 +46,25 @@ class Register extends MX_Controller
 
 		$this->form_validation->set_error_delimiters('<img src="'.$this->template->page_url.'application/images/icons/exclamation.png" data-tip="', '" />');
 
-		require_once('application/libraries/captcha.php');
-
-		$captchaObj = new Captcha($this->config->item('use_captcha'));
-
 		if(count($_POST))
 		{
 			$emailAvailable = $this->email_check($this->input->post('register_email'));
 			$usernameAvailable = $this->username_check($this->input->post('register_username'));
+			if($this->recaptcha->getUseCaptcha())
+			    $recaptcha = $this->input->post('g-recaptcha-response');
+			else
+			    $recaptcha = 'disabled';
 		}
 		else
 		{
 			$emailAvailable = false;
 			$usernameAvailable = false;
+			$recaptcha = false;
 		}
 
 		//Check if everything went correct
 		if($this->form_validation->run() == FALSE
-		|| strtoupper($this->input->post('register_captcha')) != strtoupper($captchaObj->getValue())
+		|| !$recaptcha
 		|| !count($_POST)
 		|| !$usernameAvailable
 		|| !$emailAvailable)
@@ -76,8 +77,9 @@ class Register extends MX_Controller
 						"password_error" => "",
 						"password_confirm_error" => "",
 						"expansions" => $this->realms->getExpansions(),
-						"use_captcha" => $this->config->item('use_captcha'),
-						"captcha_error" => "",
+						"use_captcha" => $this->recaptcha->getUseCaptcha(),
+						"recaptcha_html" => $this->recaptcha->getScriptTag() . $this->recaptcha->getWidget(),
+						"captcha_error" => false,
 						"url" => $this->template->page_url
 					);
 
@@ -96,9 +98,9 @@ class Register extends MX_Controller
 					}
 				}
 
-				if($this->input->post('register_captcha') != $captchaObj->getValue())
+				if(!$recaptcha && !$recaptcha == 'disabled')
 				{
-					$data['captcha_error'] = '<img src="'.$this->template->page_url.'application/images/icons/exclamation.png" />';
+					$data['captcha_error'] = true;
 				}
 			}
 

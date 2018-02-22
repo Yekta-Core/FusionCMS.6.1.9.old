@@ -41,11 +41,11 @@
 
 		{if $use_captcha}
 			<tr>
-				<td><label for="captcha"><img src="{$url}application/modules/register/controllers/getCaptcha.php?{uniqid()}" /></label></td>
+				<td><label>{lang("captcha", "register")}</label></td>
 				<td>
-					<input type="text" name="register_captcha" id="register_captcha"/>
-					
-					<span id="captcha_error">{$captcha_error}</span>
+				    <div class="captcha {if $captcha_error} alert-captcha {/if}">
+				        {$recaptcha_html}
+				    </div>
 				</td>
 			</tr>
 		{/if}
