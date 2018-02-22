@@ -1,0 +1,14 @@
+If you intend to use custom queries in the store, you might want to
+find a nice icon.
+
+=========================================================================================
+FIND ICON NAMES
+=========================================================================================
+
+First find an item that has the icon you want to use, then add &xml
+to the end of the URL. For instance: http://www.wowhead.com/item=40343&xml
+Then look for the line that says:
+
+<icon displayId="54560">INV_Sword_104</icon>
+
+"inv_sword_104" is the icon name, it has to be in lowercase!

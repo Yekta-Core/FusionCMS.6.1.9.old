@@ -1,0 +1,44 @@
+  ______         _              _____ __  __  _____ 
+ |  ____|       (_)            / ____|  \/  |/ ____|
+ | |__ _   _ ___ _  ___  _ __ | |    | \  / | (___  
+ |  __| | | / __| |/ _ \| '_ \| |    | |\/| |\___ \ 
+ | |  | |_| \__ \ | (_) | | | | |____| |  | |____) |
+ |_|   \__,_|___/_|\___/|_| |_|\_____|_|  |_|_____/ 
+
+
+============================================================
+
+Thanks for purchasing our website system. Your website
+should be up and running in just a few minutes, please
+navigate to your website and follow the steps on the
+installer to proceed.
+
+============================================================
+
+An installation walkthrough is available here:
+
+http://www.youtube.com/watch?v=C0PhEKbtVGE
+
+
+======================== Notice ============================
+
+In case you use custom staff ranks, you will need to
+manually enter those after the installation, either
+via the database or through the admin panel.
+
+
+======================= Need help? ==========================
+
+If you run into problems, please contact us at;
+
+http://fusion-hub.com/support
+
+
+============================================================
+
+Thanks again for supporting our work, we wish you a
+pleasant website experience while using our system!
+
+
+Best regards,
+The FusionCMS Team

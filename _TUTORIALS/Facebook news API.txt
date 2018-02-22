@@ -1,0 +1,23 @@
+If you intend to sync your facebook posts with the news system,
+here is how;
+
+
+The API is documented here:
+https://developers.facebook.com/docs/reference/api/
+
+========================================================
+Get the app ID and the app secret.
+========================================================
+To Get the access code of facebook for your page do this:
+1) Go to http://www.facebook.com/developers/
+2) Allow access.
+3) Go to the application it says.
+4) Click on create new app.
+5) Fill in App Name, App Namespace and if you need the hosting or not (you dont need that actually :P)
+6) After that you go to a page with the App Id and the App Secret.
+
+//Get the Feed (NEWS)
+https://graph.facebook.com/PAGE_ID/feed?access_token=ACCESS_TOKEN
+
+//Get the access token
+https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET
