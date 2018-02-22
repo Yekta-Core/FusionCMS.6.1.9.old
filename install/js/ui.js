@@ -60,26 +60,7 @@ var UI = {
     
     Validation: 
 	{
-        license: function(notifyResult) {
-    		var license = $("#license").val();
-            
-            Ajax.checkKey(license, function(valid) {
-                if (valid) {
-                    // prepare data for next step
-				    Ajax.checkPermissions();
-                    Ajax.checkPhpExtensions();
-                    Ajax.checkApacheModules();
-                    Ajax.checkPhpVersion();
-                    
-					notifyResult(true);
-                }
-                else {
-					notifyResult(false, 'This license key is invalid.');
-                }
-            });
-        },
-        
-        requirements: function(notifyResult) 
+        requirements: function(notifyResult)
 		{
             // check folder permissions
             Ajax.checkPermissions(function() {

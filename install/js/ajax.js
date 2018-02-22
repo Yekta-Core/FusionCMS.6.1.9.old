@@ -79,11 +79,6 @@ var Ajax = {
 			}
 		}
 	},
-
-	checkKey: function(license, onComplete)
-	{
-		onComplete(1);
-	},
 	
 	checkPhpVersion: function(onComplete)
 	{
@@ -253,7 +248,6 @@ var Ajax = {
 				description: $("#description").val(),
 				analytics: $("#analytics").val(),
 				cdn: $("#cdn").val(),
-				license: $("#license").val(),
 				cms_hostname: $("#cms_hostname").val(),
 				cms_username: $("#cms_username").val(),
 				cms_password: $("#cms_password").val(),

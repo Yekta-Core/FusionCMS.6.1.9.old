@@ -21,11 +21,7 @@ var Memory = (function()
 
 	// Fields for each step
 	var steps = {
-		2: [
-			"license"
-		],
-
-		4: [
+		3: [
 			"title",
 			"server_name",
 			"realmlist",
@@ -37,7 +33,7 @@ var Memory = (function()
 			"cdn"
 		],
 
-		5: [
+		4: [
 			"cms_hostname",
 			"cms_username",
 			"cms_database",

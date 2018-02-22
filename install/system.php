@@ -127,7 +127,6 @@ class Install
 		$data['description'] = $_POST['description'];
 		$data['analytics'] = ($_POST['analytics']) ? $_POST['analytics'] : false;
 		$data['cdn'] = ($_POST['cdn'] == "yes") ? true : false;
-		$data['licenseKey'] = $_POST['license'];
 		$data['security_code'] = $_POST['security_code'];
 
 		foreach($data as $key => $value)

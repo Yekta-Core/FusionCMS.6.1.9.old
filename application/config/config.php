@@ -253,37 +253,6 @@ $config['modules_locations'] = array(
 
 /*
 |--------------------------------------------------------------------------
-| Encryption Key
-|--------------------------------------------------------------------------
-|
-| If you use the Encryption class or the Session class you
-| MUST set an encryption key.  See the user guide for info.
-|
-*/
-
-if(file_exists("application/config/encryption_key.php"))
-{
-	require_once("application/config/encryption_key.php");
-}
-else
-{
-	if(!is_writable("application/config/"))
-	{
-		die('The application/config/ folder is not writable. Please see <a href="https://raxezdev.zendesk.com/entries/22839206-File-permissions-Installation-problems-fopen-permission-denied-" target="_blank">the FAQ</a> for more information.');
-	}
-
-	$file = fopen("application/config/encryption_key.php", "w");
-
-	$encryptionKey = uniqid().uniqid().uniqid().uniqid();
-
-	fwrite($file, '<?php $encryptionKey = "'.$encryptionKey.'";');
-	fclose($file);
-}
-
-$config['encryption_key'] = $encryptionKey;
-
-/*
-|--------------------------------------------------------------------------
 | Session Variables
 |--------------------------------------------------------------------------
 |
