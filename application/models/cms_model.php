@@ -22,7 +22,6 @@ class Cms_model extends CI_Model
 		$this->db = $this->load->database("cms", true);
 
 		$this->logVisit();
-		$this->clearSessions();
 	}
 
 	private function logVisit()
@@ -38,15 +37,10 @@ class Cms_model extends CI_Model
 		);
 
 		$this->db->where('ip_address', $session['ip_address']);
-		$this->db->where('user_agent', $session['user_agent']);
-
 		$query = $this->db->get("ci_sessions");
 		
 		$data = array(
-			"ip_address" => $session['ip_address'],
 			"user_agent" => $session['user_agent'],
-			"last_activity" => time(),
-			"user_data" => ""
 		);
 
 		if($this->session->userdata('online'))
@@ -59,22 +53,11 @@ class Cms_model extends CI_Model
 			$data['user_data'] = serialize($udata);
 		}
 
-		if($query->num_rows() == 0)
-		{
-			$data['session_id'] = uniqid(time());
-			$this->db->insert("ci_sessions", $data);
-		}
-		else
+		if($query->num_rows() != 0)
 		{
 			$this->db->where('ip_address', $session['ip_address']);
-			$this->db->where('user_agent', $session['user_agent']);
 			$this->db->update("ci_sessions", $data);
 		}
-	}
-
-	private function clearSessions()
-	{
-		$this->db->query("DELETE FROM ci_sessions WHERE last_activity < ?", array(time() - 60*60));
 	}
 
 	public function getModuleConfigKey($moduleId, $key)
