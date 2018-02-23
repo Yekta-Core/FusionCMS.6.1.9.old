@@ -257,6 +257,10 @@ class Character extends MX_Controller
 
 	private function getBackground()
 	{
+		switch($this->className)
+		{
+			case "Demon Hunter": return "mardum"; break;
+		}
 		switch($this->raceName)
 		{
 			default: return "shattrath"; break;
@@ -275,10 +279,6 @@ class Character extends MX_Controller
 			case "Pandaren N": return "wanderingisle"; break;
 			case "Pandaren A": return "wanderingisle"; break;
 			case "Pandaren H": return "wanderingisle"; break;
-		}
-		switch($this->className)
-		{
-			case "Demon Hunter": return "mardum"; break;
 		}
 	}
 
