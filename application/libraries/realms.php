@@ -345,6 +345,11 @@ class Realms
 			$level = 70;
 			$class = "Deathknight";
 		}
+		else if($class == "Demon Hunter")
+		{
+			$level = 110;
+			$class = "DemonHunter";
+		}
 		else
 		{
 			// If character is below 30, use lv 1 image

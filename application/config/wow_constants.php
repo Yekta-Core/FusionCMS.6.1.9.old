@@ -36,5 +36,6 @@ $config['classes_en'] = array(
 	8 => "Mage",
 	9 => "Warlock",
 	10 => "Monk",
-	11 => "Druid"
+	11 => "Druid",
+	12 => "Demon Hunter"
 );
