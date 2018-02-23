@@ -20,9 +20,9 @@ class Toppvp_model extends CI_Model
 			$query = $this->connection->query(query('pvp_character', $realm->getId()).$count);
 		}
 
-		if($this->connection->_error_message())
+		if(!$query)
 		{
-			die($this->connection->_error_message());	
+			die($err = $this->connection->error());
 		}
 		
 		if($query->num_rows() > 0)

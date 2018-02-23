@@ -133,9 +133,9 @@ class Armory_model extends CI_Model
 
 		$query = $this->connection->query("SELECT ".column("guild_member", "guildid", true, $this->realmId)." FROM ".table("guild_member", $this->realmId)." WHERE ".column("guild_member", "guid", false, $this->realmId)."= ?", array($this->id));
 
-		if($this->connection->_error_message())
+		if(!$query)
 		{
-			die($this->connection->_error_message());
+			die($err = $this->connection->error());
 		}
 
 		if($query && $query->num_rows() > 0)
@@ -148,9 +148,9 @@ class Armory_model extends CI_Model
 		{
 			$query2 = $this->connection->query("SELECT ".column("guild", "guildid", true, $this->realmId)." FROM ".table("guild", $this->realmId)." WHERE ".column("guild", "leaderguid", false, $this->realmId)."= ?", array($this->id));
 
-			if($this->connection->_error_message())
+			if(!$query2)
 			{
-				die($this->connection->_error_message());
+				die($err = $this->connection->error());
 			}
 
 			if($query2 && $query2->num_rows() > 0)

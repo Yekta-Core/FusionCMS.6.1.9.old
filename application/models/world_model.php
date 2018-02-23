@@ -64,9 +64,9 @@ class World_model
 
 			$query = $this->db->query(query('get_item', $this->realmId), array($id));
 
-			if($this->db->_error_message())
+			if(!$query)
 			{
-				die($this->db->_error_message());
+				die($err = $this->db->error());
 			}
 
 			if($query->num_rows() > 0)

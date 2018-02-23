@@ -28,11 +28,11 @@ class Gm_model extends CI_Model
 				$query = $realm->getCharacters()->getConnection()->query("SELECT ".allColumns("gm_tickets", $realm->getId())." FROM ".table("gm_tickets", $realm->getId()));
 			}
 
-			if($realm->getCharacters()->getConnection()->_error_message())
-			{
-				die($realm->getCharacters()->getConnection()->_error_message());
-			}
-			
+		    if(!$query)
+		    {
+		    	die($err = $this->connection->error());
+		    }
+
 			if($query->num_rows() > 0)
 			{
 				return $query->result_array();
@@ -64,11 +64,11 @@ class Gm_model extends CI_Model
 
 			//Do the query
 			$query = $realm->getCharacters()->getConnection()->query("SELECT ".allColumns("gm_tickets", $realm->getId())." FROM ".table("gm_tickets", $realm->getId())." WHERE ".column("gm_tickets", "ticketId", false, $realm->getId())." = ?", array($ticketId));
-			
-			if($realm->getCharacters()->getConnection()->_error_message())
-			{
-				die($realm->getCharacters()->getConnection()->_error_message());
-			}
+
+		    if(!$query)
+		    {
+		    	die($err = $this->connection->error());
+		    }
 
 			if($query->num_rows() > 0)
 			{
@@ -97,9 +97,9 @@ class Gm_model extends CI_Model
 	{
 		$query = $realmConnection->query("SELECT COUNT(*) AS `total` FROM ".table("characters", $realmId)." WHERE ".column("characters", "guid", false, $realmId)." = ? AND ".column("characters", "online", false, $realmId)." = 0", array($guid));
 
-		if($realmConnection->_error_message())
+		if(!$query)
 		{
-			die($realmConnection->_error_message());
+			die($err = $realmConnection->error());
 		}
 
 		if($query->num_rows() > 0)
