@@ -61,5 +61,5 @@ $lang['none'] = "Keine";
  */
 $lang['tbc'] = "The Burning Crusade";
 $lang['wotlk'] = "Wrath of The Lich King";
-$lang['cataclysm'] = "Cataclysm";
+$lang['cata'] = "Cataclysm";
 $lang['mop'] = "Mists of Pandaria";
