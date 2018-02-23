@@ -3,8 +3,8 @@
 $config['races'] = lang("races", "wow_constants");
 $config['classes'] = lang("classes", "wow_constants");
 
-$config['alliance_races'] = array(1,3,4,7,11);
-$config['horde_races'] = array(2,5,6,8,10);
+$config['alliance_races'] = array(1,3,4,7,11,22,25);
+$config['horde_races'] = array(2,5,6,8,9,10,26);
 
 // Do not edit these unless you edit the corrosponding files names in:
 // application/images/avatars/
@@ -20,7 +20,10 @@ $config['races_en'] = array(
 	9 => "Goblin",
 	10 => "Blood elf",
 	11 => "Draenei",
-	22 => "Worgen"
+	22 => "Worgen",
+	24 => "Pandaren",
+	25 => "Pandaren",
+	26 => "Pandaren"
 );
 $config['classes_en'] = array(
 	1 => "Warrior",
@@ -32,5 +35,6 @@ $config['classes_en'] = array(
 	7 => "Shaman",
 	8 => "Mage",
 	9 => "Warlock",
+	10 => "Monk",
 	11 => "Druid"
 );
