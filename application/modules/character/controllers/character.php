@@ -270,6 +270,15 @@ class Character extends MX_Controller
 			case "Tauren": return "thunderbluff"; break;
 			case "Undead": return "undercity"; break;
 			case "Troll": return "orgrimmar"; break;
+			case "Goblin": return "kezan"; break;
+			case "Worgen": return "gilneas"; break;
+			case "Pandaren N": return "wanderingisle"; break;
+			case "Pandaren A": return "wanderingisle"; break;
+			case "Pandaren H": return "wanderingisle"; break;
+		}
+		switch($this->className)
+		{
+			case "Demon Hunter": return "mardum"; break;
 		}
 	}
 
