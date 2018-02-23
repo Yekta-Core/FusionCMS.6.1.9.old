@@ -89,18 +89,18 @@ class Settings extends MX_Controller
 
 		switch($this->input->post('disabled_expansions'))
 		{
+			case "cata":
+				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
+			break;
 			case "wotlk":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("Cataclysm"));
+				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("Cataclysm"), $this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
 			break;
-
 			case "tbc":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("WotLK"), $this->realms->getEmulator()->getExpansionId("Cataclysm"));
+				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("WotLK"), $this->realms->getEmulator()->getExpansionId("Cataclysm"), $this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
 			break;
-
 			case "none":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("TBC"), $this->realms->getEmulator()->getExpansionId("WotLK"), $this->realms->getEmulator()->getExpansionId("Cataclysm"));
+				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("TBC"), $this->realms->getEmulator()->getExpansionId("WotLK"), $this->realms->getEmulator()->getExpansionId("Cataclysm"), $this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
 			break;
-
 			default:
 				$disabled_expansions = array();
 			break;

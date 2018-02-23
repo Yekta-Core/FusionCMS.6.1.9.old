@@ -155,18 +155,18 @@ class Install
 		{
 			switch($_POST['expansion'])
 			{
+				case "cata":
+					$config->set('disabled_expansions', array(4));
+				break;
 				case "wotlk":
-					$config->set('disabled_expansions', array(3));
+					$config->set('disabled_expansions', array(3,4));
 				break;
-
 				case "tbc":
-					$config->set('disabled_expansions', array(2,3));
+					$config->set('disabled_expansions', array(2,3,4));
 				break;
-
 				case "vanilla":
-					$config->set('disabled_expansions', array(1,2,3));
+					$config->set('disabled_expansions', array(1,2,3,4));
 				break;
-
 				default:
 					$config->set('disabled_expansions', array());
 				break;
