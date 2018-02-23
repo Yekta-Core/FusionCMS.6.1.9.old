@@ -133,11 +133,11 @@ class External_account_model extends CI_Model
 		$this->connection->insert(table("account"), $data);
 
 		// Fix for TrinityCore RBAC (or any emulator with 'rbac' in it's emulator filename)
-		if(preg_match("/rbac/i", get_class($this->realms->getEmulator())))
+		/*if(preg_match("/rbac/i", get_class($this->realms->getEmulator())))
 		{
 			$userId = $this->user->getId($username);
 			$this->connection->query("INSERT INTO rbac_account_groups(`accountId`, `groupId`, `realmId`) values (?, 1, -1)", array($userId));
-		}
+		}*/
 
 		$this->updateDailySignUps();
 	}
