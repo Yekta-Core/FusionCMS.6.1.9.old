@@ -18,9 +18,9 @@ $lang['races'] = array(
 	10 => "Blood elf",
 	11 => "Draenei",
 	22 => "Worgen",
-	24 => "Pandaren",
-	25 => "Pandaren",
-	26 => "Pandaren"
+	24 => "Pandaren N",
+	25 => "Pandaren A",
+	26 => "Pandaren H"
 );
 
 $lang['classes'] = array(

@@ -366,12 +366,33 @@ class Realms
 			}
 		}
 
-		if(in_array($race, array("Blood elf", "Night elf")))
+		if(in_array($race, array("Blood elf", "Night elf", "Pandaren N", "Pandaren A", "Pandaren H")))
 		{
 			$race = preg_replace("/ /", "", $race);
 		}
 
-		$file = $class."-".strtolower($race)."-".$gender."-".$level;
+        switch ($race) {
+            case 'Goblin':
+				$level = 85;
+				$file = strtolower($race)."-".$gender."-".$level;
+                break;
+            case 'Worgen':
+				$level = 85;
+				$file = strtolower($race)."-".$gender."-".$level;
+                break;
+            case 'PandarenN':
+				$level = 1;
+				$file = strtolower($race)."-".$gender."-".$level;
+                break;
+            case 'PandarenA':
+            case 'PandarenH':
+				$level = 90;
+				$file = strtolower($race)."-".$gender."-".$level;
+                break;
+            default:
+				$file = $class."-".strtolower($race)."-".$gender."-".$level;
+                break;
+        }
 
 		if(!file_exists("application/images/avatars/".$file.".gif"))
 		{
