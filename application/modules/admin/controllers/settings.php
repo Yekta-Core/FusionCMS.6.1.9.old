@@ -89,17 +89,23 @@ class Settings extends MX_Controller
 
 		switch($this->input->post('disabled_expansions'))
 		{
+			case "wod":
+				$disabled_expansions = array(6);
+			break;
+			case "mop":
+				$disabled_expansions = array(5,6);
+			break;
 			case "cata":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
+				$disabled_expansions = array(4,5,6);
 			break;
 			case "wotlk":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("Cataclysm"), $this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
+				$disabled_expansions = array(3,4,5,6);
 			break;
 			case "tbc":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("WotLK"), $this->realms->getEmulator()->getExpansionId("Cataclysm"), $this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
+				$disabled_expansions = array(2,3,4,5,6);
 			break;
 			case "none":
-				$disabled_expansions = array($this->realms->getEmulator()->getExpansionId("TBC"), $this->realms->getEmulator()->getExpansionId("WotLK"), $this->realms->getEmulator()->getExpansionId("Cataclysm"), $this->realms->getEmulator()->getExpansionId("Mists Of Pandaria"));
+				$disabled_expansions = array(1,2,3,4,5,6);
 			break;
 			default:
 				$disabled_expansions = array();
