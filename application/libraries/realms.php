@@ -340,36 +340,22 @@ class Realms
 
 		$gender = ($character['gender']) ? "f" : "m";
 
-		if($class == "Death knight")
+
+		if(in_array($class, array("Death knight", "Demon Hunter")))
 		{
+			$class = preg_replace("/ /", "", $class);
+		}
+
+		if($class == "Deathknight")
 			$level = 70;
-			$class = "Deathknight";
-		}
-		else if($class == "Demon Hunter")
-		{
+		elseif($class == "DemonHunter")
 			$level = 110;
-			$class = "DemonHunter";
-		}
-		else
-		{
-			// If character is below 30, use lv 1 image
-			if($character['level'] < 30)
-			{
-				$level = 1;
-			}
-
-			// If character is below 65, use lv 60 image
-			elseif($character['level'] < 65)
-			{
-				$level = 60;
-			}
-
-			// 65+, use lvl70 image
-			else
-			{
-				$level = 70;
-			}
-		}
+		elseif($character['level'] < 30) // If character is below 30, use lv 1 image
+			$level = 1;
+		elseif($character['level'] < 65) // If character is below 65, use lv 60 image
+			$level = 60;
+		else                             // 65+, use lvl70 image
+			$level = 70;
 
 		if(in_array($race, array("Blood elf", "Night elf", "Pandaren N", "Pandaren A", "Pandaren H")))
 		{
