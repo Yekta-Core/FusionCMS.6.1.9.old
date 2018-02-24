@@ -73,10 +73,10 @@ $route['messages/read/(:num)'] = "messages/read/index/$1";
 $route['messages/create/(:num)'] = "messages/create/index/$1";
 
 // Armory
-$route['character/(:any)'] = "character/index/$1";
-$route['guild/(:any)'] = "guild/index/$1";
-$route['tooltip/(:any)'] = "tooltip/index/$1";
-$route['item/(:any)'] = "item/index/$1";
+$route['character/(:num)/(:any)'] = "character/index/$1/$2";
+$route['guild/(:num)/(:num)'] = "guild/index/$1/$2";
+$route['tooltip/(:num)/(:num)'] = "tooltip/index/$1/$2";
+$route['item/(:num)/(:num)'] = "item/index/$1/$2";
 
 // Admin
 $route['admin/edit/save/(:any)'] = "admin/edit/save/$1";
