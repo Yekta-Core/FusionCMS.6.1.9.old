@@ -61,3 +61,5 @@ $lang['tbc'] = "The Burning Crusade";
 $lang['wotlk'] = "Wrath of The Lich King";
 $lang['cata'] = "Cataclysm";
 $lang['mop'] = "Mists of Pandaria";
+$lang['wod'] = "Warlords of Draenor";
+$lang['legion'] = "Legion";
