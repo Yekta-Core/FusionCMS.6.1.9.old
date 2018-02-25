@@ -75,9 +75,3 @@ var Admin = {
 		});
 	}
 }
-
-
-$(document).ready(function()
-{
-	Admin.remoteCheck();
-});
