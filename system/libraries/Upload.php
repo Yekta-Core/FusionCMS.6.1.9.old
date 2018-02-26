@@ -158,7 +158,7 @@ class CI_Upload {
 	 *
 	 * @var	string
 	 */
-	public $upload_path = '';
+	public $upload_path = './uploads/';
 
 	/**
 	 * Overwrite flag

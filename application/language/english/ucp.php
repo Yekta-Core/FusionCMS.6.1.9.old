@@ -26,6 +26,7 @@ $lang['member_since'] = "Member since";
 
 // Avatar
 $lang['change_avatar'] = "Change avatar";
+$lang['upload_avatar'] = "Upload avatar";
 $lang['make_use'] = "We make use of";
 $lang['provides_way'] = "which provides an easy way to maintain your avatars across the web.";
 $lang['to_change'] = "To change your avatar you need to";
