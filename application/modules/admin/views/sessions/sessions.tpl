@@ -11,7 +11,7 @@
 					<table width="100%">
 						<tr>
 							<td width="15%">
-								{date("H:i:s", $visitor.last_activity)}
+								{date("H:i:s", $visitor.timestamp)}
 							</td>
 
 							<td width="20%">
