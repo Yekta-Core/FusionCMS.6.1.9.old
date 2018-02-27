@@ -1,8 +1,7 @@
 .idea/*
-_install/.lock
+install/.lock
 application/config/database.php
 application/config/fusion.php
-application/config/encryption_key.php
-application/config/recaptcha.php
 update/update_password.php
+uploads/*
 .DS_Store
