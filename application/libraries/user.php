@@ -391,7 +391,7 @@ class User
 		if($avatar)
 		    $avatar = base_url().'uploads/'.$avatar;
 		else
-		    $avatar = $this->CI->template->image_path.'avatars/avatar.jpg';
+		    $avatar = $this->CI->template->image_path.$this->CI->template->theme_data['avatar'];
 
 		return $avatar;
 	}
