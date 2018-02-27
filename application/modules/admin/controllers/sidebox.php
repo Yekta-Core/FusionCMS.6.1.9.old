@@ -46,6 +46,8 @@ class Sidebox extends MX_Controller
 		$data = array(
 			'url' => $this->template->page_url,
 			'sideboxes' => $sideboxes,
+			"sidebox" => $this->config->item('sidebox'),
+			"sidebox_home" => $this->config->item('sidebox_home'),
 			'sideboxModules' => $this->sideboxModules,
 			'fusionEditor' => $fusionEditor
 		);
@@ -192,6 +194,38 @@ class Sidebox extends MX_Controller
 				}
 			}
 		}
+	}
+
+	public function saveSettings()
+	{
+		require_once('application/libraries/configeditor.php');
+
+		$sidebox = $this->input->post("show_sidebox");
+
+		if($sidebox == "always")
+		{
+			$sidebox = true;
+			$sidebox_home = false;
+		}
+		elseif($sidebox == "home")
+		{
+			$sidebox = true;
+			$sidebox_home = true;
+		}
+		else
+		{
+			$sidebox = false;
+			$sidebox_home = false;
+		}
+
+		$fusionConfig = new ConfigEditor("application/config/fusion.php");
+
+		$fusionConfig->set('sidebox', $sidebox);
+		$fusionConfig->set('sidebox_home', $sidebox_home);
+
+		$fusionConfig->save();
+
+		die("UI.alert('Settings have been saved!')");
 	}
 
 	public function save($id = false)

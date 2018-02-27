@@ -169,5 +169,28 @@ var Sidebox = {
 		{
 			$("#custom_field").fadeOut(150);
 		}
+	},
+
+	/**
+	 * ----------- Module specific code -----------
+	 */
+
+	saveSettings: function(form)
+	{
+		var values = {csrf_token_name: Config.CSRF};
+
+		$(form).find("input, select").each(function()
+		{
+			if($(this).attr("type") != "submit")
+			{
+				values[$(this).attr("name")] = $(this).val();
+			}
+		});
+
+		$.post(Config.URL + "admin/sidebox/saveSettings", values, function(data)
+		{
+			console.log(data);
+			eval(data);
+		});
 	}
 }

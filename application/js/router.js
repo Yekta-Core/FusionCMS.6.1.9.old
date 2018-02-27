@@ -107,6 +107,7 @@ var Router = {
 							js: null,
 							css: null,
 							slider: false,
+							sidebox: false,
 							language: false
 						};
 					}
@@ -153,6 +154,15 @@ var Router = {
 					else
 					{
 						$("#" + Config.Slider.id).hide();
+					}
+
+					if(data.sidebox)
+					{
+						$("#" + Config.Sidebox.id).show();
+					}
+					else
+					{
+						$("#" + Config.Sidebox.id).hide();
 					}
 				}
 			}).fail(function()

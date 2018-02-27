@@ -1,3 +1,18 @@
+<section class="box big">
+	<h2><img src="{$url}application/themes/admin/images/icons/black16x16/ic_settings.png"/> Sideboxes settings</h2>
+
+	<form onSubmit="Sidebox.saveSettings(this); return false">
+		<label for="show_sidebox">Visibility</label>
+		<select name="show_sidebox" id="show_sidebox">
+			<option value="home" {if $sidebox && $sidebox_home}selected{/if}>Only on homepage</option>
+			<option value="always" {if $sidebox && !$sidebox_home}selected{/if}>Always</option>
+			<option value="never" {if !$sidebox}selected{/if}>Never</option>
+		</select>
+
+		<input type="submit" value="Save settings" />
+	</form>
+</section>
+
 <section class="box big" id="main_sidebox">
 	<h2>
 		<img src="{$url}application/themes/admin/images/icons/black16x16/ic_grid.png"/>

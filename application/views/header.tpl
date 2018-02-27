@@ -92,6 +92,10 @@
 					effect: "{$slider_style}",
 					id: "{$slider_id}"
 				},
+
+				Sidebox: {
+					id: "{$sidebox_id}"
+				},
 				
 				voteReminder: {if $vote_reminder}1{else}0{/if},
 

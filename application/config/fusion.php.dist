@@ -130,6 +130,18 @@ $config['slider_style'] = false;
 
 /*
 |--------------------------------------------------------------------------
+| Sideboxes module
+|
+| ['sidebox'] Enable or disable sideboxes
+| ['sidebox_home'] Hide sideboxes from any page except of 'Home'
+|
+|--------------------------------------------------------------------------
+*/
+$config['sidebox'] = true;
+$config['sidebox_home'] = true;
+
+/*
+|--------------------------------------------------------------------------
 | Enable vote reminder popup
 |--------------------------------------------------------------------------
 |

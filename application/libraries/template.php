@@ -108,6 +108,33 @@ class Template
 
 		return false;
 	}
+
+	/**
+	 * Returns if the sidebox should be shown on the current page.
+	 * @return bool
+	 */
+	private function isSideboxesShown()
+	{
+		// Is it enabled?
+		if($this->CI->config->item('sidebox'))
+		{
+			// Only on news page?, if yes make sure we are on the news page, then show it
+			if($this->CI->config->item('sidebox_home') && $this->CI->router->class == "news")
+			{
+				return true;
+			}
+
+			// If we want to only show it on the home page, then do not show it on the other pages.
+			elseif($this->CI->config->item('sidebox_home') && $this->CI->router->class != "news")
+			{
+				return false;
+			}
+
+			return true;
+		}
+
+		return false;
+	}
 	
 	/**
 	 * Loads the template
@@ -180,7 +207,8 @@ class Template
 			"image_path" => $this->image_path,
 			"isOnline" => $this->CI->user->isOnline(),
 			"header_url" => ($this->CI->config->item('header_url')) ? "style='background-image:url(".$this->CI->config->item('header_url').")'" : "",
-			"sideboxes" => $sideboxes
+			"sideboxes" => $sideboxes,
+			"show_sidebox" => $this->isSideboxesShown()
 		);
 
 		// Load the main template
@@ -202,6 +230,7 @@ class Template
 			"js" => $js,
 			"css" => $css,
 			"slider" => $this->isSliderShown(),
+			"sidebox" => $this->isSideboxesShown(),
 			"language" => $this->CI->language->getClientData()
 		);
 
@@ -266,6 +295,7 @@ class Template
 			"description" => ($this->custom_description) ? $this->custom_description : $this->CI->config->item("description"),
 			"menu_top" => $this->getMenu("top"),
 			"menu_side" => $this->getMenu("side"),
+			"sidebox_id" => $this->theme_data['sidebox_id'],
 			"path" => base_url()."application/",
 			"favicon" => $this->theme_data['favicon'],
 			"cdn" => $this->CI->config->item('cdn'),

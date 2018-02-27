@@ -14,6 +14,7 @@
 	},
 	
 	"slider_id": "slider_wrapper",
+	"sidebox_id": "",
 	"screenshot": "images/screenshot.jpg",
 	"blank_header": ""
 }
