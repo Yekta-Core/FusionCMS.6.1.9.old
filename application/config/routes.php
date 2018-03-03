@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 // CodeIgniter
 $route['default_controller'] = "news";
-$route['404_override'] = 'error';
+$route['404_override'] = 'errors';
 $route['translate_uri_dashes'] = FALSE;
 
 // News

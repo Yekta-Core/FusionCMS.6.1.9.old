@@ -526,7 +526,7 @@ class Template
 
 		$this->setTitle(lang("404_title", "error"));
 
-		$message = $this->loadPage("error.tpl", array('module' => 'error', 'is404' => true));
+		$message = $this->loadPage("error.tpl", array('module' => 'errors', 'is404' => true));
 		$output = $this->box(lang("404", "error"), $message);
 
 		$this->view($output);
@@ -538,7 +538,7 @@ class Template
 	 */
 	public function showError($error = false)
 	{
-		$message = $this->loadPage("error.tpl", array('module' => 'error', 'errorMessage' => $error));
+		$message = $this->loadPage("error.tpl", array('module' => 'errors', 'errorMessage' => $error));
 		$output = $this->box($error, $message);
 
 		$this->view($output);

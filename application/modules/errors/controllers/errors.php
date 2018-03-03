@@ -1,6 +1,6 @@
 <?php
 
-class Error extends MX_Controller
+class Errors extends MX_Controller
 {
 	public function index()
 	{
