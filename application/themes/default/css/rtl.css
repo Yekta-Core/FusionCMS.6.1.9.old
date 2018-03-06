@@ -1,0 +1,24 @@
+#right article .news_bottom {
+    direction: rtl;
+}
+#right article .comments_button {
+    float: left !important;
+}
+#left {
+    float: right !important;
+}
+#left_menu {
+    direction: rtl;
+}
+#left #left_menu li a {
+    padding-right: 20px !important;
+    padding-left: unset;
+}
+#left #left_menu li a:hover {
+    padding-right: 40px !important;
+    padding-left: unset;
+}
+#left #left_menu a img {
+    margin-left: 15px !important;
+    margin-right: unset;
+}

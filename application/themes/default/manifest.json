@@ -15,5 +15,7 @@
 	"slider_id": "slider_bg",
 	"sidebox_id": "",
 	"screenshot": "images/screenshot.jpg",
-	"blank_header": ""
+	"blank_header": "",
+
+	"rtl_css": "rtl.css"
 }

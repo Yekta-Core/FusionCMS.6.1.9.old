@@ -293,6 +293,11 @@ input[type="radio"] {
 	margin-right:auto;
 }
 
+.edit_td_table {
+    float: right;
+    margin-right: 10px;
+}
+
 /* First column (the field label, in most cases) */
 .page_form table td:first-child {
 	padding-left:20px;

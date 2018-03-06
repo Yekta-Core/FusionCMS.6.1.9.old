@@ -3,7 +3,7 @@
 		<tr>
 			<td width="50%"><img src="{$url}application/images/icons/plugin.png" align="absmiddle" /> {lang("expansion", "sidebox_info")}</td>
 			<td>
-				<a href="{$url}ucp/expansion" data-tip="Change expansion" style="float:right;margin-right:10px;">
+				<a href="{$url}ucp/expansion" data-tip="Change expansion" class="edit_td_table">
 					<img src="{$url}application/images/icons/cog.png" align="absbottom" />
 				</a>
 				{$expansion}

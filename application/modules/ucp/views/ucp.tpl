@@ -11,7 +11,7 @@
 					<td width="10%"><img src="{$url}application/images/icons/user.png" /></td>
 					<td width="40%">{lang("nickname", "ucp")}</td>
 					<td width="50%">
-						<a href="{$url}ucp/settings" data-tip="Change nickname" style="float:right;margin-right:10px;"><img src="{$url}application/images/icons/pencil.png" align="absbottom" /></a>
+						<a href="{$url}ucp/settings" data-tip="Change nickname" class="edit_td_table"><img src="{$url}application/images/icons/pencil.png" align="absbottom" /></a>
 						<a href="profile/{$id}" data-tip="View profile">{$username}</a>
 					</td>
 				</tr>
@@ -19,7 +19,7 @@
 					<td width="10%"><img src="{$url}application/images/icons/world.png" /></td>
 					<td width="40%">{lang("location", "ucp")}</td>
 					<td width="50%">
-						<a href="{$url}ucp/settings" data-tip="Change location" style="float:right;margin-right:10px;"><img src="{$url}application/images/icons/pencil.png" align="absbottom" /></a>
+						<a href="{$url}ucp/settings" data-tip="Change location" class="edit_td_table"><img src="{$url}application/images/icons/pencil.png" align="absbottom" /></a>
 						{$location}
 					</td>
 				</tr>
@@ -27,7 +27,7 @@
 					<td width="10%"><img src="{$url}application/images/icons/plugin.png" /></td>
 					<td width="40%">Expansion</td>
 					<td width="50%">
-						<a href="{$url}ucp/expansion" data-tip="Change expansion" style="float:right;margin-right:10px;"><img src="{$url}application/images/icons/cog.png" align="absbottom" /></a>
+						<a href="{$url}ucp/expansion" data-tip="Change expansion" class="edit_td_table"><img src="{$url}application/images/icons/cog.png" align="absbottom" /></a>
 						{$expansion}
 					</td>
 				</tr>

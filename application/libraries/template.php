@@ -77,6 +77,8 @@ class Template
 		
 		if(!isset($array['blank_header'])) {$array['blank_header'] = '';}
 
+		if(!isset($array['rtl_css'])) {$array['rtl_css'] = '';}
+
 		// Save the data
 		$this->theme_data = $array;
 	}
@@ -307,7 +309,9 @@ class Template
 			"slider_id" => $this->theme_data['slider_id'],
 			"csrf_cookie" => $this->CI->input->cookie('csrf_token_name'),
 			"client_language" => $this->CI->language->getClientData(),
-			"activeLanguage" => $this->CI->language->getLanguage()
+			"activeLanguage" => $this->CI->language->getLanguage(),
+			"isRTL" => ($this->CI->language->getLanguage() == 'persian' || $this->CI->language->getClientData() == 'persian') ? true : false,
+			"rtl_css" => $this->theme_data['rtl_css']
 		);
 
 		// Load the theme

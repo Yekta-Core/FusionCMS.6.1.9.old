@@ -1,0 +1,55 @@
+textarea {
+    direction: rtl;
+}
+.sidebox_info {
+    direction: rtl;
+}
+.edit_td_table {
+    float: left !important;
+    margin-left: 10px;
+}
+#ucp_top {
+    direction: rtl;
+}
+#ucp_avatar {
+    float: right !important;
+}
+#gm #top_tools {
+    direction: rtl;
+}
+.gm_tools {
+    direction: rtl;
+}
+.nice_table {
+    direction: rtl;
+}
+#donate .right_image {
+    float: left !important;
+    margin-left: 40px !important;
+    margin-right: unset;
+}
+#donate form label {
+    margin-left: unset;
+    margin-right: 20px;
+    direction: rtl;
+}
+#left article .body {
+    direction: rtl;
+}
+#left .realm .realm_online {
+    float: left !important;
+}
+#store {
+    direction: rtl;
+}
+#select_character {
+    float: right !important;
+}
+.teleport_realm_divider {
+    text-align: right;
+}
+.vertical_divider {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    float: right;
+}
