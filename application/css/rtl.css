@@ -1,4 +1,31 @@
+@font-face {
+font-family: "yekan";
+src: url(../fonts/Yekan.eot);
+src: url(../fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(../fonts/Yekan.woff)
+format("woff"), url(../fonts/Yekan.ttf) format("truetype"), url(../fonts/Yekan.svg#BYekan) format("svg");
+font-weight: normal;
+font-style: normal
+}
+html {
+    font-family: "yekan" !important;
+}
+body {
+    font-family: yekan !important;
+}
+.nice_button, input[type="submit"] {
+    font-family: yekan !important;
+}
+#right article .top {
+    font-family: yekan !important;
+}
+#left article .top {
+    font-family: yekan !important;
+}
+#top_menu li a {
+    font-family: yekan !important;
+}
 textarea {
+	font-family: yekan, Arial, Helvetica, Sans-serif !important;
     direction: rtl;
 }
 .sidebox_info {
@@ -52,4 +79,16 @@ textarea {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     float: right;
+}
+#settings_info {
+    direction: rtl;
+}
+#settings {
+    direction: rtl;
+}
+#search_box input[type="text"] {
+    direction: rtl;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+    font-family: yekan, Arial, Helvetica, Sans-serif;
 }
