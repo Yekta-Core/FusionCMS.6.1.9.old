@@ -400,7 +400,7 @@ class Update
 	{
 		try
 		{
-			$version = file_get_contents("http://fusion-hub.com/remote/latestVersion");
+			$version = substr(file_get_contents("https://raw.githubusercontent.com/Yekta-Core/FusionCMS/master/application/config/version.php"), 37, 5);
 		}
 		catch(Exception $e)
 		{
