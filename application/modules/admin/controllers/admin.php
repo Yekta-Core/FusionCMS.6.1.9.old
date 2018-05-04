@@ -46,7 +46,8 @@ class Admin extends MX_Controller
 			'votes' => $this->getVotes(),
 			'signups' => $this->getSignups(),
 			'graph' => $this->getGraph(),
-			'pendingUpdate' => $this->getPendingUpdate()
+			'pendingUpdate' => $this->getPendingUpdate(),
+			'latestVersion' => $this->getLatestVersion(),
 		);
 
 		// Load my view
@@ -90,6 +91,21 @@ class Admin extends MX_Controller
 		{
 			return $updates[0];
 		}
+	}
+
+	private function getLatestVersion()
+	{
+		try
+		{
+			$newVersion = substr(file_get_contents("https://raw.githubusercontent.com/Yekta-Core/FusionCMS/master/application/config/version.php"), 37, 5);
+		}
+		catch(Exception $e)
+		{
+			$newVersion = false;
+		}
+
+		if($this->template->compareVersions($newVersion, $this->config->item('FusionCMSVersion'), true))
+			return true;
 	}
 
 	private function getUnique()

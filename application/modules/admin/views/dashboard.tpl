@@ -132,10 +132,12 @@
 				<td style="text-align:right;">{$version}</td>
 			</tr>
 		</table>
-		<div id="update" style="display:none;">
-			<div class="divider"></div>
-			<a href="https://github.com/Yekta-Core/FusionCMS/releases" class="button">An update is available</a>
-		</div>
+		{if $latestVersion}
+		    <div id="update">
+		    	<div class="divider"></div>
+		    	<a href="https://github.com/Yekta-Core/FusionCMS/releases" class="button">An update is available</a>
+		    </div>
+		{/if}
 	</section>
 
 	<section class="box">
