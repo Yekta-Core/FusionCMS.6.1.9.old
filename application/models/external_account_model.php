@@ -22,7 +22,7 @@ class External_account_model extends CI_Model
 	private $account_cache;
 
 	public function __construct()
-	{		
+	{
 		$this->account_cache = array();
 
 		if($this->user->getOnline())
