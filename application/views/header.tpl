@@ -17,7 +17,7 @@
 <html>
 	<head>
 		<title>{$title}</title>
-		
+
 		<link rel="stylesheet" href="{$path}css/default.css" type="text/css" />
 		<link rel="stylesheet" href="{$style_path}cms.css" type="text/css" />
 		<link rel="stylesheet" href="{$style_path}main.css" type="text/css" />
@@ -26,17 +26,17 @@
 			<link rel="stylesheet" href="{$path}css/rtl.css" type="text/css" />
 			{if $rtl_css}<link rel="stylesheet" href="{$style_path}{$rtl_css}" type="text/css" />{/if}
 		{/if}
-		
+
 		<link rel="shortcut icon" href="{$favicon}" />
 		
 		<!-- Search engine related -->
 		<meta name="description" content="{$description}" />
 		<meta name="keywords" content="{$keywords}" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-		
+
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		
+
 		<!-- Load scripts -->
 		<script src="{if $cdn}//html5shiv.googlecode.com/svn/trunk/html5.js{else}{$path}js/html5shiv.js{/if}"></script>
 		<script type="text/javascript" src="{if $cdn}https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js{else}{$path}js/jquery.min.js{/if}"></script>
@@ -49,7 +49,6 @@
 			if(!window.console)
 			{
 				var console = {
-				
 					log: function()
 					{
 						// Prevent stupid browsers from doing stupid things
@@ -67,7 +66,7 @@
 					x = ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
 					y = ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
 					x = x.replace(/^\s+|\s+$/g,"");
-					
+
 					if(x == c_name)
 					{
 						return unescape(y);
@@ -100,7 +99,7 @@
 				Sidebox: {
 					id: "{$sidebox_id}"
 				},
-				
+
 				voteReminder: {if $vote_reminder}1{else}0{/if},
 
 				Theme: {
