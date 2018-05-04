@@ -181,6 +181,20 @@ class Install
 
 		$config->save();
 
+		$config = '../application/config/recaptcha.php';
+		$config = new ConfigEditor($config);
+
+		$data['use_captcha'] = ($_POST['captcha'] == '1') ? true : false;
+		$data['recaptcha_site_key'] = $_POST['site_key'];
+		$data['recaptcha_secret_key'] = $_POST['secret_key'];
+
+		foreach($data as $key => $value)
+		{
+			$config->set($key, $value);
+		}
+
+		$config->save();
+
 		$db = fopen("../application/config/database.php", "w");
 
 		$raw = '<?php

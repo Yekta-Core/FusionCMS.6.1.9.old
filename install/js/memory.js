@@ -30,6 +30,9 @@ var Memory = (function()
 			"keywords",
 			"description",
 			"analytics",
+			"captcha",
+			"site_key",
+			"secret_key",
 			"cdn"
 		],
 

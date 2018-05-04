@@ -231,13 +231,27 @@
 									<label for="analytics"><a href="http://analytics.google.com" target="_blank">Google Analytics</a> website ID for advanced statistics (optional)</label>
 									<input type="text" id="analytics" placeholder="XX-YYYYYYYY-Z" />
 
+									<label for="captcha">Enable <a href="http://www.google.com/recaptcha/admin" target="_blank">Google Captcha</a> (optional)</label>
+									<select id="captcha" onChange="if(this.value == '1'){ $('#captcha_keys').fadeIn(150); } else { $('#captcha_keys').fadeOut(150); }">
+										<option value="1">Yes</option>
+										<option value="0" selected>No</option>
+									</select>
+
+									<div id="captcha_keys" style="display:none">
+										<label for="site_key" data-tip="Use this in the HTML code your site serves to users.">Site key (?)</label>
+										<input type="text" id="site_key" />
+
+										<label for="secret_key" data-tip="Use this for communication between your site and Google. Be sure to keep it a secret.">Secret key (?)</label>
+										<input type="text" id="secret_key" />
+									</div>
+
 									<label for="cdn">Use content delivery network for Javascript libraries (do only disable it for LAN-only environments)</label>
 									<select id="cdn">
 										<option value="1">Yes</option>
 										<option value="0">No</option>
 									</select>
 								</form>
-								
+
 								<div class="installer_navigation">
 									<a class="prev nice_button">Previous step</a>
 									<a class="next nice_button">Next step</a>
