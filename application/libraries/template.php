@@ -186,11 +186,11 @@ class Template
 		$header = $this->getHeader($css, $js);
 		$modals = $this->getModals();
 
-		$url = $this->CI->router->fetch_class();
+		$url = $this->CI->router->class;
 
-		if($this->CI->router->fetch_method() != "index")
+		if($this->CI->router->method != "index")
 		{
-			$url .= "/".$this->CI->router->fetch_method();
+			$url .= "/".$this->CI->router->method;
 		}
 
 		// Gather the theme data

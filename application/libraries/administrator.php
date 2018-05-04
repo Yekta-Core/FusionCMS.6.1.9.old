@@ -224,11 +224,11 @@ class Administrator
 							// Find out if this is the current link
 							if($module == $this->CI->router->fetch_module())
 							{
-								$url = $this->CI->router->fetch_class();
+								$url = $this->CI->router->class;
 
-								if($this->CI->router->fetch_method() != "index")
+								if($this->CI->router->method != "index")
 								{
-									$url .= "/".$this->CI->router->fetch_method();
+									$url .= "/".$this->CI->router->method;
 								}
 
 								if($url == $menuGroup['links'][$key]['controller'])
@@ -246,7 +246,7 @@ class Administrator
 					// Work-around to highlight dashboard - since it is not in the manifest
 					if(empty($this->currentPage) && $this->CI->router->fetch_module() == "admin")
 					{
-						switch($this->CI->router->fetch_class())
+						switch($this->CI->router->class)
 						{
 							case "admin": $this->currentPage = "admin/"; break;
 							case "settings": $this->currentPage = "admin/settings"; break;
