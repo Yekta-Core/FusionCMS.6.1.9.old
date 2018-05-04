@@ -835,7 +835,10 @@ class CI_Image_lib {
 		imagedestroy($dst_img);
 		imagedestroy($src_img);
 
-		chmod($this->full_dst_path, $this->file_permissions);
+		if ($this->dynamic_output !== TRUE)
+		{
+			chmod($this->full_dst_path, $this->file_permissions);
+		}
 
 		return TRUE;
 	}
@@ -1204,7 +1207,7 @@ class CI_Image_lib {
 		}
 
 		// Build the finalized image
-		if ($wm_img_type === 3 && function_exists('imagealphablending'))
+		if ($wm_img_type === 3)
 		{
 			@imagealphablending($src_img, TRUE);
 		}
@@ -1548,7 +1551,16 @@ class CI_Image_lib {
 	 */
 	public function image_display_gd($resource)
 	{
-		header('Content-Disposition: filename='.$this->source_image.';');
+		// RFC 6266 allows for multibyte filenames, but only in UTF-8,
+		// so we have to make it conditional ...
+		$filename = basename(empty($this->new_image) ? $this->source_image : $this->new_image);
+		$charset = strtoupper(config_item('charset'));
+		$utf8_filename = ($charset !== 'UTF-8')
+			? get_instance()->utf8->convert_to_utf8($filename, $charset)
+			: $filename;
+		isset($utf8_filename[0]) && $utf8_filename = " filename*=UTF-8''".rawurlencode($utf8_filename);
+
+		header('Content-Disposition: filename="'.$filename.'";'.$utf8_filename);
 		header('Content-Type: '.$this->mime_type);
 		header('Content-Transfer-Encoding: binary');
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');

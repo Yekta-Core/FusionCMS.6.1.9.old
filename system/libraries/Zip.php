@@ -366,7 +366,7 @@ class CI_Zip {
 
 		while (FALSE !== ($file = readdir($fp)))
 		{
-			if ($file[0] === '.')
+			if ($file === '.' OR $file === '..')
 			{
 				continue;
 			}
@@ -519,9 +519,6 @@ class CI_Zip {
 	{
 		if (self::$func_overload)
 		{
-			// mb_substr($str, $start, null, '8bit') returns an empty
-			// string on PHP 5.3
-			isset($length) OR $length = ($start >= 0 ? self::strlen($str) - $start : -$start);
 			return mb_substr($str, $start, $length, '8bit');
 		}
 

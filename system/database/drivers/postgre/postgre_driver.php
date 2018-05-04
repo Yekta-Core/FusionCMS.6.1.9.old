@@ -163,6 +163,13 @@ class CI_DB_postgre_driver extends CI_DB {
 				return FALSE;
 			}
 
+			if (pg_set_client_encoding($this->conn_id, $this->char_set) !== 0)
+			{
+				log_message('error', "Database: Unable to set the configured connection charset ('{$this->char_set}').");
+				pg_close($this->conn_id);
+				return ($this->db->db_debug) ? $this->display_error('db_unable_to_set_charset', $this->char_set) : FALSE;
+			}
+
 			empty($this->schema) OR $this->simple_query('SET search_path TO '.$this->schema.',public');
 		}
 
@@ -190,19 +197,6 @@ class CI_DB_postgre_driver extends CI_DB {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set client character set
-	 *
-	 * @param	string	$charset
-	 * @return	bool
-	 */
-	protected function _db_set_charset($charset)
-	{
-		return (pg_set_client_encoding($this->conn_id, $charset) === 0);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
 	 * Database version number
 	 *
 	 * @return	string
@@ -224,8 +218,8 @@ class CI_DB_postgre_driver extends CI_DB {
 		 * and so we'll have to fall back to running a query in
 		 * order to get it.
 		 */
-		return isset($pg_version['server'])
-			? $this->data_cache['version'] = $pg_version['server']
+		return (isset($pg_version['server']) && preg_match('#^(\d+\.\d+)#', $pg_version['server'], $match))
+			? $this->data_cache['version'] = $match[1]
 			: parent::version();
 	}
 
@@ -321,7 +315,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 */
 	public function escape($str)
 	{
-		if (is_php('5.4.4') && (is_string($str) OR (is_object($str) && method_exists($str, '__toString'))))
+		if (is_string($str) OR (is_object($str) && method_exists($str, '__toString')))
 		{
 			return pg_escape_literal($this->conn_id, $str);
 		}
@@ -354,8 +348,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 */
 	public function insert_id()
 	{
-		$v = pg_version($this->conn_id);
-		$v = isset($v['server']) ? $v['server'] : 0; // 'server' key is only available since PosgreSQL 7.4
+		$v = $this->version();
 
 		$table	= (func_num_args() > 0) ? func_get_arg(0) : NULL;
 		$column	= (func_num_args() > 1) ? func_get_arg(1) : NULL;
