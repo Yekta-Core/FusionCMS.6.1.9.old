@@ -134,7 +134,7 @@
 		</table>
 		<div id="update" style="display:none;">
 			<div class="divider"></div>
-			<a href="http://www.fusion-hub.com/account/updates" class="button">An update is available</a>
+			<a href="https://github.com/Yekta-Core/FusionCMS/releases" class="button">An update is available</a>
 		</div>
 	</section>
 
