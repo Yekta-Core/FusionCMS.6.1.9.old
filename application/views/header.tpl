@@ -22,9 +22,9 @@
 		<link rel="stylesheet" href="{$style_path}cms.css" type="text/css" />
 		<link rel="stylesheet" href="{$style_path}main.css" type="text/css" />
 		{if $extra_css}<link rel="stylesheet" href="{$path}{$extra_css}" type="text/css" />{/if}
-		{if $isRTL}
+		{if $isRTL && $rtl_css}
 			<link rel="stylesheet" href="{$path}css/rtl.css" type="text/css" />
-			{if $rtl_css}<link rel="stylesheet" href="{$style_path}{$rtl_css}" type="text/css" />{/if}
+			<link rel="stylesheet" href="{$style_path}{$rtl_css}" type="text/css" />
 		{/if}
 
 		<link rel="shortcut icon" href="{$favicon}" />
