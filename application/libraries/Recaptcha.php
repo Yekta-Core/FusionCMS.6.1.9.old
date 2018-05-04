@@ -23,11 +23,12 @@ class Recaptcha
     {
         $this->_ci = & get_instance();
         $this->_ci->load->config('recaptcha');
+        $this->_useCaptcha = $this->_ci->config->item('use_captcha');
         $this->_siteKey = $this->_ci->config->item('recaptcha_site_key');
         $this->_secretKey = $this->_ci->config->item('recaptcha_secret_key');
         $this->_language = $this->_ci->config->item('recaptcha_lang');
         $this->_theme = $this->_ci->config->item('recaptcha_theme');
-        if (empty($this->_siteKey) or empty($this->_secretKey)) {
+        if ($this->_useCaptcha && (empty($this->_siteKey) or empty($this->_secretKey))) {
             die("To use reCAPTCHA you must get an API key from <a href='"
                 .self::sign_up_url."'>".self::sign_up_url."</a> and add in application\config\\recaptcha.php or disable Captcha");
         }
