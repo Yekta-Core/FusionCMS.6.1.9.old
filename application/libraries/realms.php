@@ -6,7 +6,7 @@
  * @author Xavier Geerinck
  * @author Elliott Robbins
  * @author Marvin Wichmann
- * @link http://fusion-hub.com
+ * @link https://github.com/Yekta-Core/FusionCMS/
  */
 
 class Realms

@@ -203,16 +203,16 @@
 				<aside id="logo"><a href="#" class="logo"></a></aside>
 				<div class="divider"></div>
 				<aside id="links">
-					<a href="http://www.fusion-hub.com" target="_blank">FusionHub</a>
-					<a href="http://www.fusion-hub.com/modules" target="_blank">Modules</a>
-					<a href="http://www.fusion-hub.com/themes" target="_blank">Themes</a>
-					<a href="http://www.fusion-hub.com/support" target="_blank">Support</a>
+					<a href="https://github.com/Yekta-Core/FusionCMS/" target="_blank">FusionHub</a>
+					<a href="https://t.me/FusionCMS" target="_blank">Modules</a>
+					<a href="https://t.me/FusionCMS" target="_blank">Themes</a>
+					<a href="https://t.me/FusionCMS" target="_blank">Support</a>
 				</aside>
 				<div class="divider"></div>
 				<aside id="facebook">
-					<h1>Like us on Facebook!</h1>
+					<h1>Fusion on Telegram!</h1>
 					<div id="fb_icon"></div>
-					<a href="http://facebook.com/HeroicForge" target="_blank">HeroicForge</a>
+					<a href="https://t.me/FusionCMS" target="_blank">FusionCMS</a>
 				</aside>
 				<div class="divider"></div>
 				<aside id="html5">

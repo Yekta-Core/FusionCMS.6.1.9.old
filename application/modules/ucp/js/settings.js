@@ -4,7 +4,7 @@
  * @version 6.X
  * @author Jesper Lindström
  * @author Xavier Geernick
- * @link http://fusion-hub.com
+ * @link https://github.com/Yekta-Core/FusionCMS/
  */
 
 var Settings = {

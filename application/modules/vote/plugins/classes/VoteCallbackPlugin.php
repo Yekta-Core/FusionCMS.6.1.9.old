@@ -5,7 +5,7 @@
  *
  * @package FusionCMS
  * @author Maxi Arnicke
- * @link http://fusion-hub.com
+ * @link https://github.com/Yekta-Core/FusionCMS/
  */
 
 abstract class VoteCallbackPlugin extends Plugin

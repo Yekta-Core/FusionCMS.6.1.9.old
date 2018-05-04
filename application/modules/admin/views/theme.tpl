@@ -50,6 +50,6 @@
 	</ul>
 
 	<span>
-		<center><b>Want a new look?</b> Get more themes from the <a href="http://fusion-hub.com/themes" target="_blank">FusionHub</a></center>
+		<center><b>Want a new look?</b> Get more themes from the <a href="hhttps://t.me/FusionCMS" target="_blank">FusionCMS</a></center>
 	</span>
 </section>

@@ -10,7 +10,7 @@
  | |  | |_| \__ \ | (_) | | | | |____| |  | |____) |
  |_|   \__,_|___/_|\___/|_| |_|\_____|_|  |_|_____/ 
 
- www.fusion-hub.com
+ https://github.com/Yekta-Core/FusionCMS/
 
 -->
 
