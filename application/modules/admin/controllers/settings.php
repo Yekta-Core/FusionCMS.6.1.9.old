@@ -11,6 +11,7 @@ class Settings extends MX_Controller
 		
 		$this->load->config('smtp');
 		$this->load->config('performance');
+		$this->load->config('recaptcha');
 
 		require_once('application/libraries/configeditor.php');
 
@@ -34,6 +35,11 @@ class Settings extends MX_Controller
 		$config['reminder_interval'] = $this->config->item('reminder_interval');
 		$config['has_smtp'] = $this->config->item('has_smtp');
 		$config['cdn'] = $this->config->item('cdn');
+
+		// Captcha
+		$config['captcha'] = $this->config->item('use_captcha');
+		$config['site_key'] = $this->config->item('recaptcha_site_key');
+		$config['secret_key'] = $this->config->item('recaptcha_secret_key');
 
 		// Performance
 		$config['disable_visitor_graph'] = $this->config->item('disable_visitor_graph');
@@ -113,8 +119,15 @@ class Settings extends MX_Controller
 		}
 
 		$fusionConfig->set('disabled_expansions', $disabled_expansions);
-		
+
 		$fusionConfig->save();
+
+		// Captcha
+		$captchaConfig = new ConfigEditor("application/config/recaptcha.php");
+		$captchaConfig->set('use_captcha', $this->input->post('use_captcha') == '1' ? true : false);
+		$captchaConfig->set('recaptcha_site_key', $this->input->post('recaptcha_site_key'));
+		$captchaConfig->set('recaptcha_secret_key', $this->input->post('recaptcha_secret_key'));
+		$captchaConfig->save();
 
 		die('yes');
 	}

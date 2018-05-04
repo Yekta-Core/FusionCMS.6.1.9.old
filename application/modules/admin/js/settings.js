@@ -200,6 +200,9 @@ var Settings = {
 			reminder_interval:$("#reminder_interval").val(),
 			cdn:$("#cdn").val(),
 			has_smtp:$("#has_smtp").val(),
+			use_captcha:$("#captcha").val(),
+			recaptcha_site_key:$("#site_key").val(),
+			recaptcha_secret_key:$("#secret_key").val(),
 			csrf_token_name: Config.CSRF
 		};
 

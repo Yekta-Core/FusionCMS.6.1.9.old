@@ -158,6 +158,20 @@
 			<label for="analytics"><a href="http://analytics.google.com" target="_blank">Google Analytics</a> website ID for advanced statistics (optional)</label>
 			<input type="text" id="analytics" placeholder="XX-YYYYYYYY-Z" value="{$config.analytics}"/>
 
+			<label for="captcha">Enable <a href="http://www.google.com/recaptcha/admin" target="_blank">Google Captcha</a> (optional)</label>
+			<select id="captcha" onChange="if(this.value == '1'){ $('#captcha_keys').fadeIn(150); } else { $('#captcha_keys').fadeOut(150); }">
+				<option value="1" {if $config.captcha}selected{/if}>Yes</option>
+				<option value="0" {if !$config.captcha}selected{/if}>No</option>
+			</select>
+
+			<div id="captcha_keys" {if !$config.captcha}style="display:none"{/if}>
+				<label for="site_key" data-tip="Use this in the HTML code your site serves to users.">Site key (?)</label>
+				<input type="text" id="site_key" value="{$config.site_key}" />
+
+				<label for="secret_key" data-tip="Use this for communication between your site and Google. Be sure to keep it a secret.">Secret key (?)</label>
+				<input type="text" id="secret_key" value="{$config.secret_key}" />
+			</div>
+
 			<label for="vote_reminder">Enable vote reminder popup</label>
 			<select id="vote_reminder" onChange="Settings.toggleVoteReminder(this)">
 				<option value="1" {if $config.vote_reminder}selected{/if}>Yes</option>
