@@ -5,11 +5,8 @@ class inbox_model extends CI_Model
 	private $inbox = false;
 	private $sent = false;
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
-	
+	public function __construct() { }
+
 	public function getMessages($userId, $start = 0, $limit = 1)
 	{
 		$this->db->select('*')->from('private_message')->where(array('user_id' => $userId, 'deleted_user' => 0))->order_by('time', 'DESC')->limit($limit, $start);

@@ -2,10 +2,7 @@
 
 class Armory_model extends CI_Model
 {
-	public function __construct()
-	{
-		parent::__construct();	
-	}
+	public function __construct() { }
 	
 	public function findItem($searchString = "", $realmId = 1)
 	{

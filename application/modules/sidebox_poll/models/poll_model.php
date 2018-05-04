@@ -6,11 +6,9 @@ class Poll_model extends CI_Model
 	
 	public function __construct()
 	{
-		parent::__construct();
-	
 		$this->db = $this->load->database("cms", true);
 	}
-	
+
 	public function getPolls()
 	{
 		$query = $this->db->query("SELECT * FROM sideboxes_poll_questions ORDER BY questionid DESC");	

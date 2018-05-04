@@ -19,8 +19,6 @@ class Internal_user_model extends CI_Model
 	
 	public function __construct()
 	{
-		parent::__construct();
-
 		$this->connection = $this->load->database("cms", true);
 		$this->permissionCache = array();
 		

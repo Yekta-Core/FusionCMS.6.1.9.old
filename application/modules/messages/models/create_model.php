@@ -2,11 +2,8 @@
 
 class Create_model extends CI_Model
 {
-	public function __construct()
-	{
-		parent::__construct();
-	}
-	
+	public function __construct() { }
+
 	public function insertMessage($user_id, $sender_id, $title, $message)
 	{
 		$this->db->query("INSERT INTO private_message (`user_id`, `sender_id`, `message`, `time`, `title`) VALUES (?, ?, ?, ?, ?)", array($user_id, $sender_id, $message, time(), $title));

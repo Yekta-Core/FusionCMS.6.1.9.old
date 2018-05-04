@@ -7,10 +7,8 @@ class Armory_model extends CI_Model
 	private $id;
 	private $realmId;
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+	public function __construct() { }
+
 	/**
 	 * Assign the character ID to the model
 	 */

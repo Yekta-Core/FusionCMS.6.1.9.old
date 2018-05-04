@@ -12,8 +12,6 @@ class Acl_model extends CI_Model
 {
 	public function __construct()
 	{
-		parent::__construct();
-
 		if(file_exists("application/config/owner.php"))
 		{
 			$this->load->config('owner');

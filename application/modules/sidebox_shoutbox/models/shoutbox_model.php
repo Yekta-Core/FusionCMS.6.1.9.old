@@ -6,11 +6,9 @@ class Shoutbox_model extends CI_Model
 	
 	public function __construct()
 	{
-		parent::__construct();
-
 		$this->db = $this->load->database("cms", true);
 	}
-	
+
 	public function getShouts($start, $end)
 	{
 		$this->db->select('*')->from('shouts')->order_by('id', 'DESC')->limit($end, $start);
