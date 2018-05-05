@@ -145,6 +145,7 @@ COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB;
 
 -- NEWS TAGS
+DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag` (
 	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(50) NOT NULL,
@@ -154,6 +155,7 @@ CREATE TABLE `tag` (
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB;
 
+DROP TABLE IF EXISTS `article_tag`;
 CREATE TABLE `article_tag` (
 	`article_id` INT(11) NOT NULL,
 	`tag_id` INT(10) NOT NULL,
