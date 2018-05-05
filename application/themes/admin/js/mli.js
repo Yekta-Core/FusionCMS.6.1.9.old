@@ -3,7 +3,7 @@
  * @package FusionCMS
  * @version 6.1
  * @author Jesper Lindström
- * @link http://fusion-hub.com
+ * @link https://github.com/Yekta-Core/FusionCMS
  */
 
 function MultiLanguageInput(field)

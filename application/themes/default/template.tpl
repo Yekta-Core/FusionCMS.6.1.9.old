@@ -52,7 +52,7 @@
 				<div class="clear"></div>
 			</div>
 			<footer>
-				<a href="http://www.fusion-hub.com" id="logo" target="_blank"></a>
+				<a href="https://github.com/Yekta-Core/FusionCMS" id="logo" target="_blank"></a>
 				<p>&copy; Copyright {date("Y")} {$serverName}</p>
 			</footer>
 		</section>

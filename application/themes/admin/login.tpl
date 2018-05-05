@@ -95,16 +95,16 @@
 				<aside id="logo"><a href="#" class="logo"></a></aside>
 				<div class="divider"></div>
 				<aside id="links">
-					<a href="http://fusion-hub.com/" target="_blank">FusionHub</a>
-					<a href="http://fusion-hub.com/modules" target="_blank">Modules</a>
-					<a href="http://fusion-hub.com/themes" target="_blank">Themes</a>
-					<a href="http://fusion-hub.com/support" target="_blank">Support</a>
+					<a href="https://github.com/Yekta-Core/FusionCMS/" target="_blank">FusionHub</a>
+					<a href="https://t.me/FusionCMS" target="_blank">Modules</a>
+					<a href="https://t.me/FusionCMS" target="_blank">Themes</a>
+					<a href="https://t.me/FusionCMS" target="_blank">Support</a>
 				</aside>
 				<div class="divider"></div>
 				<aside id="twitter">
-					<h1>Follow us on Twitter!</h1>
+					<h1>Fusion on Telegram!</h1>
 					<div id="twitter_icon"></div>
-					<a href="http://twitter.com/FusionHub" target="_blank">@FusionHub</a>
+					<a href="https://t.me/FusionCMS" target="_blank">FusionCMS</a>
 				</aside>
 				<div class="divider"></div>
 				<aside id="html5">
