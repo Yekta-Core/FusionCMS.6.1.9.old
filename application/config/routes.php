@@ -50,38 +50,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 // CodeIgniter
-$route['default_controller'] = "news";
-$route['404_override'] = 'errors';
+$route['default_controller'] = "News";
+$route['404_override'] = 'Errors';
 $route['translate_uri_dashes'] = FALSE;
 
 // News
-$route['news/(:num)'] = "news/index/$1";
+$route['news/(:num)'] = "News/index/$1";
 
 // Pages
-$route['page/admin/(:any)'] = "page/admin/$1";
-$route['page/admin'] = "page/admin/index";
-$route['page/(:any)'] = "page/index/$1";
+$route['page/admin/(:any)'] = "Page/Admin/$1";
+$route['page/admin'] = "Page/Admin/index";
+$route['page/(:any)'] = "Page/index/$1";
 
 // Comments
-$route['news/comments/get/(:num)'] = "news/comments/get/$1";
-$route['news/comments/add/(:num)'] = "news/comments/add/$1";
+$route['news/comments/get/(:num)'] = "News/Comments/get/$1";
+$route['news/comments/add/(:num)'] = "News/Comments/add/$1";
 
 // Profile
-$route['profile/(:any)'] = "profile/index/$1";
-$route['messages/page/(:any)'] = "messages/index/$1";
-$route['messages/read/(:num)'] = "messages/read/index/$1";
-$route['messages/create/(:num)'] = "messages/create/index/$1";
+$route['profile/(:any)'] = "Profile/index/$1";
+$route['messages/page/(:any)'] = "Messages/index/$1";
+$route['messages/read/(:num)'] = "Messages/Read/index/$1";
+$route['messages/create/(:num)'] = "Messages/Create/index/$1";
 
 // Armory
-$route['character/(:num)/(:any)'] = "character/index/$1/$2";
-$route['guild/(:num)/(:num)'] = "guild/index/$1/$2";
-$route['tooltip/(:num)/(:num)'] = "tooltip/index/$1/$2";
-$route['item/(:num)/(:num)'] = "item/index/$1/$2";
+$route['character/(:num)/(:any)'] = "Character/index/$1/$2";
+$route['guild/(:num)/(:num)'] = "Guild/index/$1/$2";
+$route['tooltip/(:num)/(:num)'] = "Tooltip/index/$1/$2";
+$route['item/(:num)/(:num)'] = "Item/index/$1/$2";
 
 // Admin
-$route['admin/edit/save/(:any)'] = "admin/edit/save/$1";
-$route['admin/edit/saveSource/(:any)'] = "admin/edit/saveSource/$1";
-$route['admin/edit/(:any)'] = "admin/edit/index/$1";
+$route['admin/edit/save/(:any)'] = "Admin/Edit/save/$1";
+$route['admin/edit/saveSource/(:any)'] = "Admin/Edit/saveSource/$1";
+$route['admin/edit/(:any)'] = "Admin/Edit/index/$1";
 
 // Vote
-$route['vote/callback/(:any)'] = "vote/callback/index/$1";
+$route['vote/callback/(:any)'] = "Vote/Callback/index/$1";
