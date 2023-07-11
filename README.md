@@ -1,3 +1,9 @@
+# YEAH SO THIS IS PRETTY MUCH DEAD, DO YOURSELF A FAVOR AND SWITCH TO [FusionCMS](https://github.com/FusionWowCMS/FusionCMS)
+
+--------
+
+--------
+
 ## Welcome to Fusion CMS
 
 FusionCMS is officially discontinued, so we decided to open source our work here.
