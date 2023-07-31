@@ -16,7 +16,7 @@ Php Extensions : php_mysqli, php_curl, php_openssl, php_soap, php_gd, php_mbstri
 Apache Modules : mod_rewrite, mod_headers, mod_expires, mod_deflate
 
 ## Install
-An installation walkthrough is available [here](http://www.youtube.com/watch?v=C0PhEKbtVGE)
+An installation walkthrough is available [here](http://www.youtube.com/watch?v=C0PhEKbtVGE).
 
 ## Reporting issues
 Issues can be reported via the [Github issue tracker](https://github.com/Yekta-Core/FusionCMS/issues).
